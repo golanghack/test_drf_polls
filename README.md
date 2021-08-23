@@ -1,9 +1,9 @@
 # django-drf-test
 Простейшее приложение опроса на django - drf.
 
-#openv terminal
+openv terminal
 
-#pip install pipenv 
+pip install pipenv 
 
 #mkdir polls
 
