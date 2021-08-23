@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+        db:
+          image: "postgres:11"
+          environment:
+           - "POSTGRESQL_DATABASE=django_db"
+           - "POSTGRESQL_PASSWORD=password"
+           - "POSTGRES_HOST_AUTH_METHOD=trust"
+          #volumes:
+            #- "./var/lib/postgres"
+
+        web:
+            build: ./
+            command: python /polls/manage.py runserver 0.0.0.0:8000
+            volumes:
+                - .:/polls
+            ports:
+                - "8000:8000"
+            depends_on:
+                - db
